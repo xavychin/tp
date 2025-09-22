@@ -33,8 +33,9 @@ public class RemarkCommandTest {
         Person editedPerson = new PersonBuilder(firstPerson).withRemark(REMARK_STUB).build();
 
         RemarkCommand remarkCommand = new RemarkCommand(INDEX_FIRST_PERSON, new Remark(editedPerson.getRemark().value));
-
-        String expectedMessage = String.format(RemarkCommand.MESSAGE_ADD_REMARK_SUCCESS, editedPerson);
+        String expectedMessage = String.format(RemarkCommand.MESSAGE_ADD_REMARK_SUCCESS,
+                "Alice Pauline; Phone: 94351253; Email: alice@example.com; Address: 123, Jurong West Ave 6,"
+                        + " #08-111; Tags: [friends]");
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setPerson(firstPerson, editedPerson);
@@ -50,7 +51,9 @@ public class RemarkCommandTest {
         RemarkCommand remarkCommand = new RemarkCommand(INDEX_FIRST_PERSON,
                 new Remark(editedPerson.getRemark().toString()));
 
-        String expectedMessage = String.format(RemarkCommand.MESSAGE_DELETE_REMARK_SUCCESS, editedPerson);
+        String expectedMessage = String.format(RemarkCommand.MESSAGE_DELETE_REMARK_SUCCESS,
+                "Alice Pauline; Phone: 94351253; Email: alice@example.com; Address: 123, Jurong West Ave 6,"
+                        + " #08-111; Tags: [friends]");
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setPerson(firstPerson, editedPerson);
@@ -68,7 +71,9 @@ public class RemarkCommandTest {
 
         RemarkCommand remarkCommand = new RemarkCommand(INDEX_FIRST_PERSON, new Remark(editedPerson.getRemark().value));
 
-        String expectedMessage = String.format(RemarkCommand.MESSAGE_ADD_REMARK_SUCCESS, editedPerson);
+        String expectedMessage = String.format(RemarkCommand.MESSAGE_ADD_REMARK_SUCCESS,
+                "Alice Pauline; Phone: 94351253; Email: alice@example.com; Address: 123, Jurong West Ave 6,"
+                        + " #08-111; Tags: [friends]");
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setPerson(firstPerson, editedPerson);
