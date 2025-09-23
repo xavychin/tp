@@ -7,6 +7,15 @@ We are a team based in the [School of Computing, National University of Singapor
 
 ## Project team
 
+### Xin Yi 
+
+<img src="images/xinyi-lim-19.png" width="200px">
+[[github](https://github.com/xinyi-lim-19)]
+[[portfolio](team/xinyi-lim-19.md)]
+
+* Role: 
+* Responsibility:
+
 ### Jordan Low
 
 <img src="images/jordanlow.png" width="200px">
@@ -16,3 +25,4 @@ We are a team based in the [School of Computing, National University of Singapor
 
 * Role: Developer
 * Responsibilities: Coding
+
