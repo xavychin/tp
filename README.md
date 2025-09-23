@@ -1,5 +1,5 @@
 
-[![CI Status]([![Java CI](https://github.com/AY2526S1-CS2103T-T08-3/tp/actions/workflows/gradle.yml/badge.svg)](https://github.com/AY2526S1-CS2103T-T08-3/tp/actions/workflows/gradle.yml))](https://github.com/se-edu/addressbook-level3/actions)
+[![Java CI](https://github.com/AY2526S1-CS2103T-T08-3/tp/actions/workflows/gradle.yml/badge.svg)](https://github.com/AY2526S1-CS2103T-T08-3/tp/actions/workflows/gradle.yml)
 
 Team T08-3's Team Repo
 
