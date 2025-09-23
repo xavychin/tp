@@ -7,6 +7,8 @@ We are a team based in the [School of Computing, National University of Singapor
 
 ## Project team
 
+### Xavier Chin
+
 <img src="images/xavychin.png" width="200px">
 
 [[github](http://github.com/xavychin)]
@@ -18,11 +20,12 @@ We are a team based in the [School of Computing, National University of Singapor
 ### Xin Yi 
 
 <img src="images/xinyi-lim-19.png" width="200px">
+
 [[github](https://github.com/xinyi-lim-19)]
 [[portfolio](team/xinyi-lim-19.md)]
 
-* Role: 
-* Responsibility:
+* Role: Developer
+* Responsibility: Code quality
 
 ### Jordan Low
 
@@ -34,3 +37,12 @@ We are a team based in the [School of Computing, National University of Singapor
 * Role: Developer
 * Responsibilities: Coding
 
+### Quek Yew Wei
+
+<img src="images/siderealmaple.png" width="200px">
+
+[[github](http://github.com/siderealmaple)]
+[[portfolio](team/siderealmaple.md)]
+
+* Role: Developer
+* Responsibilities: Deliverables and deadlines
