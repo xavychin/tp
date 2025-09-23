@@ -5,8 +5,6 @@ title: About Us
 
 We are a team based in the [School of Computing, National University of Singapore](https://www.comp.nus.edu.sg).
 
-You can reach us at the email `seer[at]comp.nus.edu.sg`
-
 ## Project team
 
 <img src="images/xavychin.png" width="200px">
@@ -16,3 +14,23 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 * Role: Team Lead
 * Responsibilities: Scheduling and tracking
+
+### Xin Yi 
+
+<img src="images/xinyi-lim-19.png" width="200px">
+[[github](https://github.com/xinyi-lim-19)]
+[[portfolio](team/xinyi-lim-19.md)]
+
+* Role: 
+* Responsibility:
+
+### Jordan Low
+
+<img src="images/jordanlow.png" width="200px">
+
+[homepage (NA)]
+[[github](https://github.com/jordanlow)]
+
+* Role: Developer
+* Responsibilities: Coding
+
