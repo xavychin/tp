@@ -7,6 +7,14 @@ We are a team based in the [School of Computing, National University of Singapor
 
 ## Project team
 
+<img src="images/xavychin.png" width="200px">
+
+[[github](http://github.com/xavychin)]
+[[portfolio](team/johndoe.md)]
+
+* Role: Team Lead
+* Responsibilities: Scheduling and tracking
+
 ### Xin Yi 
 
 <img src="images/xinyi-lim-19.png" width="200px">
