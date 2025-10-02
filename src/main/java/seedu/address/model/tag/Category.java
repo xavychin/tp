@@ -1,12 +1,17 @@
 package seedu.address.model.tag;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents an Employee's category in the directory.
- * Guarantees: immutable; category and value is always valid
+ * Represents an Employee's category(Role/Department/Team) in the directory.
+ * Guarantees: immutable; category and value is valid as declared in
+ * {@link #isValidCategory(String)} and {@link #isValidValue(String)}
  */
 public class Category {
+    public static final String MESSAGE_CONSTRAINTS = "Tags names should be alphanumeric";
+    public static final String VALIDATION_REGEX = "\\p{Alnum}+";
+
     public final String category;
     public final String value;
 
@@ -18,10 +23,25 @@ public class Category {
      */
     public Category(String category, String value) {
         requireNonNull(category, value);
-        //Possibly add a check category and values to see if they comply with what's written in the docs
+        checkArgument(isValidCategory(category), MESSAGE_CONSTRAINTS);
+        checkArgument(isValidValue(value), MESSAGE_CONSTRAINTS);
 
         this.category = category;
         this.value = value;
+    }
+
+    /**
+     * Returns true if a given string is a valid category.
+     */
+    public static boolean isValidCategory(String test) {
+        return test.matches(VALIDATION_REGEX);
+    }
+
+    /**
+     * Returns true if a given string is a valid value.
+     */
+    public static boolean isValidValue(String test) {
+        return test.matches(VALIDATION_REGEX);
     }
 
     @Override
