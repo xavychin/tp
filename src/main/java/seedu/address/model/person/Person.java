@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.tag.Category;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -55,6 +56,10 @@ public class Person {
         return address;
     }
 
+    /**
+     * Returns an immutable category set, which throws {@code UnsupportedOperationException}
+     * if modification is attempted.
+     */
     public Set<Category> getCategories() {
         return Collections.unmodifiableSet(categories);
     }
