@@ -46,7 +46,7 @@ class JsonAdaptedCategory {
      * @throws IllegalValueException if there were any data constraints violated in the adapted category.
      */
     public Category toModelType() throws IllegalValueException {
-        if (!Category.isValidCategory(category) || !Category.isValidValue(value)) {
+        if (!Category.isValidData(category) || !Category.isValidData(value)) {
             throw new IllegalValueException(Category.MESSAGE_CONSTRAINTS);
         }
         return new Category(category, value);
