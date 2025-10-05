@@ -28,13 +28,7 @@ public class CategoryTest {
     @Test
     public void isValidCategory() {
         // null category
-        assertThrows(NullPointerException.class, () -> Category.isValidCategory(null));
-    }
-
-    @Test
-    public void isValidValue() {
-        // null value
-        assertThrows(NullPointerException.class, () -> Category.isValidValue(null));
+        assertThrows(NullPointerException.class, () -> Category.isValidData(null));
     }
 
 }
