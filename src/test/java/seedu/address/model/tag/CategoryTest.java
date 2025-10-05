@@ -26,7 +26,7 @@ public class CategoryTest {
     }
 
     @Test
-    public void isValidCategory() {
+    public void isValidData() {
         // null category
         assertThrows(NullPointerException.class, () -> Category.isValidData(null));
     }
