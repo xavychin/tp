@@ -2,6 +2,7 @@ package seedu.address.model.util;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -55,9 +56,8 @@ public class SampleDataUtil {
     /**
      * Returns a category set containing the list of strings given.
      */
-    public static Set<Category> getCategorySet(String[][] strings) {
-        return Arrays.stream(strings)
-                .map(arr -> new Category(arr[0], arr[1]))
+    public static Set<Category> getCategorySet(List<Category> categoryList) {
+        return categoryList.stream()
                 .collect(Collectors.toSet());
     }
 

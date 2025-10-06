@@ -61,8 +61,9 @@ class JsonAdaptedPerson {
         email = source.getEmail().value;
         address = source.getAddress().value;
         categories.addAll(source.getCategories().stream()
-                .map(JsonAdaptedCategory::new)
-                .collect(Collectors.toList()));
+                .map(cat -> new JsonAdaptedCategory(cat.getCategory(), cat.getValue()))
+                .collect(Collectors.toList())
+        );
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
