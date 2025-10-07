@@ -13,6 +13,7 @@ import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
+import seedu.address.model.tag.Category;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -93,6 +94,40 @@ public class ParserUtil {
             throw new ParseException(Email.MESSAGE_CONSTRAINTS);
         }
         return new Email(trimmedEmail);
+    }
+
+    /**
+     * Parses a {@code String category} into a {@code Category}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code category} is invalid.
+     */
+    public static Category parseCategory(String category, String value) throws ParseException {
+        requireNonNull(category);
+        String trimmedCategory = category.trim();
+        String trimmedValue = value.trim();
+        if (!Category.isValidData(trimmedCategory) || !Category.isValidData(trimmedValue)) {
+            throw new ParseException(Category.MESSAGE_CONSTRAINTS);
+        }
+        return new Category(trimmedCategory, trimmedValue);
+    }
+
+    /**
+     * Parses {@code Collection<String> categories} into a {@code Set<Category>}.
+     */
+    public static Set<Category>
+        parseCategories(Collection<String> categories, Collection<String> values) throws ParseException {
+        requireNonNull(categories);
+        requireNonNull(values);
+
+        final Set<Category> categorySet = new HashSet<>();
+        String[] categoryArray = categories.toArray(new String[0]);
+        String[] valueArray = values.toArray(new String[0]);
+
+        for (int i = 0; i < categories.size(); i++) {
+            categorySet.add(parseCategory(categoryArray[i], valueArray[i]));
+        }
+        return categorySet;
     }
 
     /**

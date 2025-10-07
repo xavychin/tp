@@ -29,6 +29,14 @@ public class Category {
         this.value = value;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
     /**
      * Returns true if a given string is a valid category or value.
      */
@@ -38,7 +46,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return value;
+        return String.format("[category='%s', value='%s']", category, value);
     }
 
     @Override
