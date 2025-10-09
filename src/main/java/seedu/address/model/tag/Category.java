@@ -1,5 +1,7 @@
 package seedu.address.model.tag;
 
+import java.util.Objects;
+
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
@@ -51,13 +53,21 @@ public class Category {
 
     @Override
     public boolean equals(Object other) {
-        return other == this // short circuit if same object
-                || (other instanceof Category // instanceof handles nulls
-                && category.equals(((Category) other).category)); // state check
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof Tag)) {
+            return false;
+        }
+
+        Category otherCategory = (Category) other;
+        return category.equals(otherCategory.category) && value.equals(otherCategory.value);
     }
 
     @Override
     public int hashCode() {
-        return value.hashCode();
+        return Objects.hash(category, value);
     }
 }
