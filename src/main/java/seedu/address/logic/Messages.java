@@ -43,7 +43,9 @@ public class Messages {
                 .append(person.getEmail())
                 .append("; Address: ")
                 .append(person.getAddress())
-                .append("; Tags: ");
+                .append(";  Categories: ");
+        person.getCategories().forEach(builder::append);
+                builder.append("; Tags: ");
         person.getTags().forEach(builder::append);
         return builder.toString();
     }
@@ -55,6 +57,8 @@ public class Messages {
         final StringBuilder builder = new StringBuilder();
         builder.append(person.getName())
                 .append(" (");
+        person.getCategories().forEach(x -> builder.append(x.toString().replaceAll("[\\[\\]]", "")));
+        builder.append(")").append(" (");;
         person.getTags().forEach(x -> builder.append(x.toString().replaceAll("[\\[\\]]", "")));
         builder.append(")");
         return builder.toString();
