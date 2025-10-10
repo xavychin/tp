@@ -58,7 +58,7 @@ public class Category {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof Tag)) {
+        if (!(other instanceof Category)) {
             return false;
         }
 
