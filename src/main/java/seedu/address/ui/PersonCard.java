@@ -3,7 +3,6 @@ package seedu.address.ui;
 import java.util.Comparator;
 
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
@@ -74,17 +73,17 @@ public class PersonCard extends UiPart<Region> {
     private String boxColor(String category) {
         StringBuilder sb = new StringBuilder();
         switch (category) {
-            case "Role":
-                sb.append("#008B8B"); //DarkCyan
-                break;
-            case "Department":
-                sb.append("#006400"); //DarkGreen
-                break;
-            case "Team":
-                sb.append("#FF1493"); //DeepPink
-                break;
-            default:
-                break;
+        case "Role":
+            sb.append("#008B8B"); //DarkCyan
+            break;
+        case "Department":
+            sb.append("#006400"); //DarkGreen
+            break;
+        case "Team":
+            sb.append("#FF1493"); //DeepPink
+            break;
+        default:
+            break;
         }
 
         return sb.toString();
