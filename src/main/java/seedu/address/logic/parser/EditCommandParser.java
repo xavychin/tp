@@ -2,7 +2,13 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.*;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ASSIGN_CATEGORY;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ASSIGN_CATEGORY_VALUE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -81,10 +87,10 @@ public class EditCommandParser implements Parser<EditCommand> {
         if (categories.isEmpty() || values.isEmpty()) {
             return Optional.empty();
         }
-        Collection<String> categorySet = categories.size() == 1 && categories.contains("") ?
-                Collections.emptySet() : categories;
-        Collection<String> valueSet = values.size() == 1 && values.contains("") ?
-                Collections.emptySet() : values;
+        Collection<String> categorySet = categories.size() == 1 && categories.contains("")
+                ? Collections.emptySet() : categories;
+        Collection<String> valueSet = values.size() == 1 && values.contains("")
+                ? Collections.emptySet() : values;
         return Optional.of(ParserUtil.parseCategories(categorySet, valueSet));
     }
 

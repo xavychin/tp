@@ -1,13 +1,15 @@
 package seedu.address.model.tag;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
-
-import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+
+import org.junit.jupiter.api.Test;
 
 public class CategoryTest {
 
@@ -65,7 +67,7 @@ public class CategoryTest {
 
         List<Category> list3 = Arrays.asList(
                 new Category("Team", "Alpha"),
-                new Category("Role", "Manager"),  // different value here
+                new Category("Role", "Manager"), // different value here
                 new Category("Department", "Finance")
         );
 

@@ -1,29 +1,32 @@
 package seedu.address.logic.commands;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_CATEGORY_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_CATEGORY_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_VALUE_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_VALUE_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.logic.commands.CommandTestUtil.showPersonAtIndex;
+import static seedu.address.testutil.Assert.assertThrows;
+import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
+import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
+
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Test;
+
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.person.*;
+import seedu.address.model.person.Person;
 import seedu.address.model.tag.Category;
-import seedu.address.model.tag.Tag;
-import seedu.address.testutil.EditPersonDescriptorBuilder;
 import seedu.address.testutil.PersonBuilder;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.*;
-import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
-import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
 public class AssignCommandTest {
     private static final String ASSIGN_CATEGORY_STUB = "Role";
@@ -51,12 +54,12 @@ public class AssignCommandTest {
 
         AssignCommand assignCommand = new AssignCommand(INDEX_FIRST_PERSON,
                 new Category(ASSIGN_CATEGORY_STUB, ASSIGN_VALUE_STUB));
-        String expectedMessage = String.format(AssignCommand.MESSAGE_ADD_CATEGORY_SUCCESS, "Alice Pauline; " +
-                "Phone: 94351253; " +
-                "Email: alice@example.com; " +
-                "Address: 123, Jurong West Ave 6, #08-111; " +
-                "Categories: [category='Role', value='Manager']; " +
-                "Tags: [friends]");
+        String expectedMessage = String.format(AssignCommand.MESSAGE_ADD_CATEGORY_SUCCESS, "Alice Pauline; "
+                + "Phone: 94351253; "
+                + "Email: alice@example.com; "
+                + "Address: 123, Jurong West Ave 6, #08-111; "
+                + "Categories: [category='Role', value='Manager']; "
+                + "Tags: [friends]");
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setPerson(firstPerson, editedPerson);
@@ -75,12 +78,12 @@ public class AssignCommandTest {
         AssignCommand assignCommand = new AssignCommand(INDEX_FIRST_PERSON,
                 new Category(ASSIGN_CATEGORY_STUB, ASSIGN_VALUE_STUB));
 
-        String expectedMessage = String.format(AssignCommand.MESSAGE_ADD_CATEGORY_SUCCESS, "Alice Pauline; " +
-                "Phone: 94351253; " +
-                "Email: alice@example.com; " +
-                "Address: 123, Jurong West Ave 6, #08-111; " +
-                "Categories: [category='Role', value='Manager']; " +
-                "Tags: [friends]");
+        String expectedMessage = String.format(AssignCommand.MESSAGE_ADD_CATEGORY_SUCCESS, "Alice Pauline; "
+                + "Phone: 94351253; "
+                + "Email: alice@example.com; "
+                + "Address: 123, Jurong West Ave 6, #08-111; "
+                + "Categories: [category='Role', value='Manager']; "
+                + "Tags: [friends]");
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setPerson(firstPerson, editedPerson);
