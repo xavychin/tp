@@ -3,6 +3,7 @@ package seedu.address.ui;
 import java.util.Comparator;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
@@ -56,9 +57,36 @@ public class PersonCard extends UiPart<Region> {
         email.setText(person.getEmail().value);
         person.getCategories().stream()
                 .sorted(Comparator.comparing(category -> category.value))
-                .forEach(category -> categories.getChildren().add(new Label(category.value)));
+                .forEach(category -> {
+                    Label catLabel = new Label(category.value);
+                    String bgColor = boxColor(category.category);
+
+                    catLabel.getStyleClass().add("category-box");
+                    catLabel.setStyle("-fx-background-color: "
+                            + (bgColor.isEmpty() ? "#A9A9A9" : bgColor) + ";");
+                    categories.getChildren().add(catLabel);
+                });
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+    }
+
+    private String boxColor(String category) {
+        StringBuilder sb = new StringBuilder();
+        switch (category) {
+            case "Role":
+                sb.append("#008B8B"); //DarkCyan
+                break;
+            case "Department":
+                sb.append("#006400"); //DarkGreen
+                break;
+            case "Team":
+                sb.append("#FF1493"); //DeepPink
+                break;
+            default:
+                break;
+        }
+
+        return sb.toString();
     }
 }
